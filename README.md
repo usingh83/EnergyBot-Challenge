@@ -31,3 +31,12 @@ docker run --name mysql-standalone -e MYSQL_ROOT_PASSWORD=Admin123 -e MYSQL_DATA
 4. Modify application.properties file in \src\main\resources:
 
 update the Mysql connection string for your docker, replace hostname with mysql-standalone
+
+5. Build the project using maven and check the jar file created in target folder
+6. run the below command to create an image for the jar
+
+docker build . -t energybot-docker.jar
+7. run the image using below command:
+docker run -p 8080:8080 --name energybot-docker --link mysql-standalone:mysql -d energybot-docker
+
+now you can access the link localhost:8080/welcome
