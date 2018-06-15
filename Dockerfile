@@ -1,4 +1,4 @@
 FROM openjdk:8
-ADD target/users-mysql.jar users-mysql.jar
+ADD target/energybot-docker.jar energybot-docker.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "users-mysql.jar"]
+ENTRYPOINT ["java", "-jar", "energybot-docker.jar"]
